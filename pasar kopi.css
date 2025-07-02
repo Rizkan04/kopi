@@ -1,0 +1,98 @@
+nav {
+  background-color: #ecf4f1;
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  color: #374151; /* Tailwind gray-700 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: #10b981; /* Tailwind green-500 */
+  border-bottom-color: #10b981;
+}
+
+nav a.active {
+  color: #10b981;
+  border-bottom: 2px solid #10b981;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f8f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+p {
+  color: #5f6368;
+}
+
+.market-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.market-section h2 {
+  font-size: 1.5rem;
+  color: #1f2937; /* Tailwind gray-800 */
+}
+
+.market-section p {
+  max-width: 700px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  flex: 1 1 300px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #1f2937;
+}
+
+.card .producer {
+  color: #6b7280; /* Tailwind gray-500 */
+  margin-bottom: 1rem;
+}
+
+.card p {
+  margin: 0.25rem 0;
+}
+
+.card button {
+  margin-top: 1rem;
+  background: #047857; /* Tailwind green-700 */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.card button:hover {
+  background: #065f46; /* Tailwind green-800 */
+}

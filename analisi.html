@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analisis Produktivitas Lanjutan</title>
+    <link rel="stylesheet" href="analisis.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <nav>
+    <a href="dasbor.html" class="active-tab"
+      ><p><b>Dasbor</b></p></a
+    >
+    <a href="petainteraktif.html"
+      ><p><b>Daerah Lahan</b></p></a
+    >
+    <a href="analisi.html"
+      ><p><b>Analisis</b></p></a
+    >
+    <a href="pasar kopi.html"
+      ><p><b>Pasar Kopi</b></p></a
+    >
+    <a href="edukasi.html"
+      ><p><b>Edukasi</b></p></a
+    >
+  </nav>
+
+  <body>
+    <h1>Analisis Produktivitas Lanjutan</h1>
+    <p>Bagian ini menyediakan alat untuk menganalisis data produktivitas secara lebih mendalam. Gunakan filter untuk melihat tren dari waktu ke waktu dan memahami faktor-faktor yang mempengaruhi hasil panen.</p>
+
+    <div class="chart-container">
+      <h2>Tren Produktivitas Kopi (Kg/Ha)</h2>
+      <canvas id="productivityChart"></canvas>
+      <div class="year-selector">
+        <span>2025</span>
+      </div>
+    </div>
+
+    <script>
+      const ctx = document.getElementById("productivityChart").getContext("2d");
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Mar", "Mei", "Jul", "Sep", "Nov"],
+          datasets: [
+            {
+              label: "Produktivitas 2025",
+              data: [820, 840, 850, 870, 860, 880],
+              borderColor: "#004225",
+              backgroundColor: "rgba(0, 66, 37, 0.1)",
+              borderWidth: 2,
+              fill: true,
+              tension: 0.4,
+              pointBackgroundColor: "#004225",
+              pointBorderColor: "#004225",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                boxWidth: 20,
+                color: "#004225",
+              },
+            },
+          },
+          scales: {
+            y: {
+              min: 820,
+              max: 880,
+              ticks: {
+                stepSize: 10,
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

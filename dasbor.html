@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dasbor KopiGeos</title>
+    <link rel="stylesheet" href="dasbor.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav>
+      <a href="dasbor.html" class="active-tab"
+        ><p><b>Dasbor</b></p></a
+      >
+      <a href="petainteraktif.html"
+        ><p><b>Daerah Lahan</b></p></a
+      >
+      <a href="analisi.html"
+        ><p><b>Analisis</b></p></a
+      >
+      <a href="pasar kopi.html"
+        ><p><b>Pasar Kopi</b></p></a
+      >
+      <a href="edukasi.html"
+        ><p><b>Edukasi</b></p></a
+      >
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="p-6 bg-white">
+      <h2 class="text-2xl font-semibold mb-2">Selamat Datang di Dasbor KopiGeos</h2>
+      <p class="text-gray-600">Ini adalah ringkasan terkini dari ekosistem kopi di Bener Meriah. Gunakan dasbor ini untuk melihat metrik utama, cuaca, dan harga pasar secara cepat.</p>
+    </section>
+
+    <!-- Stats Cards -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
+      <div class="card">
+        <p class="text-gray-500"><b>Total Lahan Terdata</b></p>
+        <p class="stat">48,700 <span class="unit">Ha</span></p>
+      </div>
+      <div class="card">
+        <p class="text-gray-500"><b>Jumlah Petani</b></p>
+        <p class="stat">33,500 <span class="unit">Orang</span></p>
+      </div>
+      <div class="card">
+        <p class="text-gray-500"><b>Produktivitas Rata-rata</b></p>
+        <p class="stat">850 <span class="unit">Kg/Ha</span></p>
+      </div>
+      <div class="card">
+        <p class="text-gray-500"><b>Harga Pasar (Arabika Gayo)</b></p>
+        <p class="stat text-green-600 font-bold">Rp 95.000 <span class="unit">/Kg</span></p>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
+      <!-- Bar Chart -->
+      <div class="card">
+        <h3 class="text-lg font-semibold mb-2">Analisis Produktivitas per Kecamatan (Tahun Ini)</h3>
+        <canvas id="barChart" class="h-64 w-full"></canvas>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="card">
+        <h3 class="text-lg font-semibold mb-2">Distribusi Varietas Kopi</h3>
+        <div class="h-64 w-full">
+          <canvas id="pieChart" class="w-full h-full"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chart.js Script -->
+    <script>
+      const ctx = document.getElementById("barChart").getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Pintu Rime", "Gajah Putih", "Timang Gajah", "Wih Pesam", "Bukit"],
+          datasets: [
+            {
+              label: "Produktivitas (Kg/Ha)",
+              data: [820, 880, 760, 840, 870],
+              backgroundColor: "rgba(34, 197, 94, 0.8)", // warna hijau
+              borderRadius: 5,
+            },
+          ],
+        },
+        options: {
+          scales: { y: { beginAtZero: true } },
+          plugins: { legend: { display: false } },
+        },
+      });
+
+      const pieCtx = document.getElementById("pieChart").getContext("2d");
+      new Chart(pieCtx, {
+        type: "pie",
+        data: {
+          labels: ["Arabika Gayo", "Robusta", "Excelsa", "Liberika"],
+          datasets: [
+            {
+              label: "Distribusi Varietas",
+              data: [65, 20, 10, 5],
+              backgroundColor: [
+                "rgba(34, 197, 94, 0.8)", // hijau
+                "rgba(59, 130, 246, 0.8)", // biru
+                "rgba(251, 191, 36, 0.8)", // kuning
+                "rgba(239, 68, 68, 0.8)", // merah
+              ],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
+    </script>
+  </body>
+</html>

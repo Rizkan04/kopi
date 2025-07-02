@@ -1,0 +1,145 @@
+/* Header */
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Tombol Sign In */
+.signin-btn {
+  background-color: #3b82f6; /* Tailwind blue-500 */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.signin-btn:hover {
+  background-color: #2563eb; /* Tailwind blue-600 */
+}
+
+/* Navbar */
+nav {
+  background-color: #ecf4f1;
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  color: #374151; /* Tailwind gray-700 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  color: #10b981; /* Tailwind green-500 */
+  border-bottom-color: #10b981;
+}
+
+nav a.active {
+  color: #10b981;
+  border-bottom: 2px solid #10b981;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+a p {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  margin-left: 1.5rem;
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 2em;
+  margin-inline-start: 1em;
+  margin-inline-end: 1em;
+  unicode-bidi: isolate;
+  color: #5f6368;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f8f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Hero Section */
+section.hero {
+  background-color: #ffffff;
+  padding: 1.5rem;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #4b5563; /* Tailwind gray-600 */
+}
+
+/* Card Section */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card p {
+  margin: 0.25rem 0;
+}
+
+.card .value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #10b981;
+}
+
+/* Chart Section */
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.chart-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.chart-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peta Geospasial Lahan Kopi</title>
+    <link rel="stylesheet" href="petainteraktif.css" />
+  </head>
+
+  <nav>
+    <a href="dasbor.html" class="active-tab"
+      ><p><b>Dasbor</b></p></a
+    >
+    <a href="petainteraktif.html"
+      ><p><b>Daerah Lahan</b></p></a
+    >
+    <a href="analisi.html"
+      ><p><b>Analisis</b></p></a
+    >
+    <a href="pasar kopi.html"
+      ><p><b>Pasar Kopi</b></p></a
+    >
+    <a href="edukasi.html"
+      ><p><b>Edukasi</b></p></a
+    >
+  </nav>
+
+  <body>
+    <div class="container">
+      <h1>Peta Geospasial Lahan Kopi</h1>
+      <p>Jelajahi sebaran lahan kopi di Bener Meriah. Klik pada titik di peta untuk melihat detail singkat mengenai lahan tersebut. Fitur ini membantu memvisualisasikan data geografis secara langsung.</p>
+
+      <div class="content">
+        <!-- Kolom Kiri -->
+        <div class="map">
+          <h2>Wilayah Bener Meriah</h2>
+          <ul class="location-list">
+            <li onclick="showInfo('Lahan 1')">🔴 Lahan 1 - Kecamatan Bukit</li>
+            <li onclick="showInfo('Lahan 2')">🔴 Lahan 2 - Kecamatan Timang Gajah</li>
+            <li onclick="showInfo('Lahan 3')">🔴 Lahan 3 - Kecamatan Wih Pesam</li>
+          </ul>
+        </div>
+
+        <!-- Kolom Kanan -->
+        <div class="info">
+          <h3>Informasi Lahan</h3>
+          <p id="info-text">Klik sebuah titik pada peta untuk menampilkan informasi detail lahan.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showInfo(lahan) {
+        document.getElementById("info-text").innerText = "Detail informasi mengenai " + lahan + ".";
+      }
+    </script>
+  </body>
+</html>
